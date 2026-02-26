@@ -1,28 +1,16 @@
-# -------------------------
-# Web Framework
-# -------------------------
-Flask==3.0.0
+Flask==3.0.3
 gunicorn==21.2.0
-Werkzeug==3.0.1
-Jinja2==3.1.3
-
-# -------------------------
-# Core (Wheels Only - No Build)
-# -------------------------
+Werkzeug==3.0.3
+Jinja2==3.1.4
 numpy==1.26.4
 Pillow==10.3.0
-tensorflow==2.15.0
 tqdm==4.66.4
-scikit-image==0.22.0
-
-# -------------------------
-# Image Processing (Headless = No GUI)
-# -------------------------
 opencv-python-headless==4.9.0.80
-
-# -------------------------
-# ML (Lightweight)
-# -------------------------
-scikit-learn==1.5.0
+scikit-image==0.23.2
+scikit-learn==1.4.2
 joblib==1.4.2
 threadpoolctl==3.5.0
+scipy==1.13.1
+matplotlib==3.8.4
+requests==2.32.2
+tensorflow==2.15.0
