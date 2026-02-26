@@ -20,6 +20,11 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 PORT = int(os.environ.get("PORT", 5000))
 
 
+@app.route("/healthz")
+def healthz():
+    return {"status": "healthy"}, 200
+
+
 @app.route("/", methods=["GET", "POST"])
 def home():
     result = None
