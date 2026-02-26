@@ -17,6 +17,9 @@ os.makedirs(HEATMAP_FOLDER, exist_ok=True)
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
+# Get port from Render environment
+PORT = int(os.environ.get("PORT", 5000))
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -66,5 +69,6 @@ def about_me():
     return render_template("about-me.html")
 
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=PORT, debug=False)
