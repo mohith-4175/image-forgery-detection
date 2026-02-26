@@ -13,4 +13,3 @@ threadpoolctl==3.5.0
 scipy==1.13.1
 matplotlib==3.8.4
 requests==2.32.2
-tensorflow==2.15.0
