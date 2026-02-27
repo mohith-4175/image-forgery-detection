@@ -10,7 +10,6 @@ from PIL import Image, ImageChops, ImageEnhance
 
 # Suppress TF warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-os.environ['TF_USE_LEGACY_KERAS'] = '0'
 
 # --------------------------------------------------
 # PROJECT ROOT
@@ -35,7 +34,7 @@ os.makedirs(HEATMAP_DIR, exist_ok=True)
 # LOAD MODELS
 # --------------------------------------------------
 print("Loading models...")
-cnn_model = keras.models.load_model(CNN_MODEL_PATH)
+cnn_model = load_model(CNN_MODEL_PATH)
 rf_model = joblib.load(RF_MODEL_PATH)
 print("✅ CNN + RF models loaded")
 
