@@ -2,23 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Me - Image Forgery Detection</title>
+    <title>Meet the Team - Image Forgery Detection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
         :root {
             --primary: #2563eb;
             --primary-dark: #1e40af;
             --glass-bg: rgba(255, 255, 255, 0.95);
             --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-
+ 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -27,54 +22,50 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-
+ 
         .bg-animation {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             overflow: hidden;
             z-index: -1;
             pointer-events: none;
         }
-
+ 
         .bg-animation span {
             position: absolute;
             display: block;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             animation: float 25s linear infinite;
             bottom: -150px;
             border-radius: 50%;
         }
-
-        .bg-animation span:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
-        .bg-animation span:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-        .bg-animation span:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-        .bg-animation span:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
-        .bg-animation span:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
-        .bg-animation span:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
-        .bg-animation span:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
-        .bg-animation span:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
-        .bg-animation span:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
-        .bg-animation span:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
-
+ 
+        .bg-animation span:nth-child(1)  { left: 25%; width: 80px;  height: 80px;  animation-delay: 0s; }
+        .bg-animation span:nth-child(2)  { left: 10%; width: 20px;  height: 20px;  animation-delay: 2s;  animation-duration: 12s; }
+        .bg-animation span:nth-child(3)  { left: 70%; width: 20px;  height: 20px;  animation-delay: 4s; }
+        .bg-animation span:nth-child(4)  { left: 40%; width: 60px;  height: 60px;  animation-delay: 0s;  animation-duration: 18s; }
+        .bg-animation span:nth-child(5)  { left: 65%; width: 20px;  height: 20px;  animation-delay: 0s; }
+        .bg-animation span:nth-child(6)  { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+        .bg-animation span:nth-child(7)  { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+        .bg-animation span:nth-child(8)  { left: 50%; width: 25px;  height: 25px;  animation-delay: 15s; animation-duration: 45s; }
+        .bg-animation span:nth-child(9)  { left: 20%; width: 15px;  height: 15px;  animation-delay: 2s;  animation-duration: 35s; }
+        .bg-animation span:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s;  animation-duration: 11s; }
+ 
         @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+            0%   { transform: translateY(0) rotate(0deg);        opacity: 1; border-radius: 0; }
             100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
         }
-
+ 
         header {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15,23,42,0.85);
             backdrop-filter: blur(10px);
             color: white;
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
+ 
         header h1 {
             font-size: 2rem;
             font-weight: 700;
@@ -82,18 +73,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
+ 
         nav {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15,23,42,0.9);
             backdrop-filter: blur(10px);
             padding: 15px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-
+ 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
@@ -103,99 +94,260 @@
             padding: 8px 16px;
             border-radius: 8px;
         }
-
+ 
         nav a:hover, nav a.active {
             color: white;
-            background: rgba(37, 99, 235, 0.3);
+            background: rgba(37,99,235,0.3);
         }
-
+ 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        .profile-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            overflow: hidden;          /* Keeps image inside circle */
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-        }
-
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;         /* Fills the circle perfectly */
-            display: block;
-        }
-
-        .profile-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            text-align: center;
-            margin-bottom: 30px;
-            animation: slideUp 0.6s ease;
-        }
-
+ 
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-
-        .profile-avatar {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%);
+ 
+        /* ── Section heading ── */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideUp 0.5s ease;
+        }
+ 
+        .section-heading h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+ 
+        .section-heading p {
+            color: rgba(255,255,255,0.8);
+            margin-top: 8px;
+        }
+ 
+        /* ── Guide card ── */
+        .guide-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.5);
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideUp 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #2563eb, #8b5cf6, #f093fb);
+        }
+ 
+        .guide-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #8b5cf6);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 18px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+ 
+        .guide-avatar {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
             border-radius: 50%;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: white;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 30px rgba(37,99,235,0.35);
             border: 5px solid white;
         }
-
-        .profile-name {
-            font-size: 2.2rem;
+ 
+        .guide-name {
+            font-size: 2rem;
             color: #1e293b;
-            margin-bottom: 10px;
             font-weight: 700;
+            margin-bottom: 6px;
         }
-
-        .profile-title {
+ 
+        .guide-role {
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
         }
-
-        .profile-bio {
-            color: #475569;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-            font-size: 1.05rem;
+ 
+        .guide-dept {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
         }
-
+ 
+        /* ── Guide education ── */
+        .guide-edu {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: left;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+ 
+        .guide-edu h3 {
+            font-size: 1.1rem;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+ 
+        /* ── Timeline ── */
+        .timeline { position: relative; padding-left: 25px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), #8b5cf6);
+            border-radius: 3px;
+        }
+ 
+        .timeline-item { position: relative; margin-bottom: 18px; padding-left: 15px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px; top: 4px;
+            width: 13px; height: 13px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+ 
+        .timeline-date  { color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 3px; }
+        .timeline-title { color: #1e293b; font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+        .timeline-desc  { color: #64748b; font-size: 0.88rem; }
+ 
+        /* ── Students grid ── */
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+ 
+        .student-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.5);
+            text-align: center;
+            animation: slideUp 0.6s ease both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .student-card:nth-child(1) { animation-delay: 0.1s; }
+        .student-card:nth-child(2) { animation-delay: 0.2s; }
+        .student-card:nth-child(3) { animation-delay: 0.3s; }
+        .student-card:nth-child(4) { animation-delay: 0.4s; }
+ 
+        .student-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(0,0,0,0.13); }
+ 
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+ 
+        .student-card:nth-child(1)::before { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+        .student-card:nth-child(2)::before { background: linear-gradient(90deg,#8b5cf6,#c4b5fd); }
+        .student-card:nth-child(3)::before { background: linear-gradient(90deg,#0891b2,#67e8f9); }
+        .student-card:nth-child(4)::before { background: linear-gradient(90deg,#d946ef,#f9a8d4); }
+ 
+        .student-avatar {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border: 4px solid white;
+        }
+ 
+        .student-card:nth-child(1) .student-avatar { background: linear-gradient(135deg,#2563eb,#60a5fa); }
+        .student-card:nth-child(2) .student-avatar { background: linear-gradient(135deg,#8b5cf6,#c4b5fd); }
+        .student-card:nth-child(3) .student-avatar { background: linear-gradient(135deg,#0891b2,#67e8f9); }
+        .student-card:nth-child(4) .student-avatar { background: linear-gradient(135deg,#d946ef,#f9a8d4); }
+ 
+        .student-name { font-size: 1.2rem; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+        .student-roll { color: var(--primary); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 18px; }
+ 
+        .mini-divider {
+            width: 40px; height: 3px;
+            background: linear-gradient(90deg, var(--primary), #8b5cf6);
+            border-radius: 2px;
+            margin: 0 auto 18px;
+        }
+ 
+        .student-edu {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: left;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+ 
+        .student-edu h3 {
+            font-size: 0.95rem;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+ 
+        /* ── Shared contact & connect card ── */
         .content-card {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             padding: 35px;
             border-radius: 20px;
             box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255,255,255,0.5);
             margin-bottom: 25px;
             animation: slideUp 0.6s ease 0.1s both;
         }
-
+ 
         .content-card h2 {
             color: #1e293b;
             font-size: 1.5rem;
@@ -204,17 +356,15 @@
             align-items: center;
             gap: 10px;
         }
-
-        .content-card h2 span {
-            font-size: 1.8rem;
-        }
-
+ 
+        .content-card h2 span { font-size: 1.8rem; }
+ 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
-
+ 
         .info-item {
             background: #f8fafc;
             padding: 20px;
@@ -222,32 +372,18 @@
             border-left: 4px solid var(--primary);
             transition: all 0.3s ease;
         }
-
-        .info-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .info-label {
-            color: #64748b;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .info-value {
-            color: #1e293b;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
+ 
+        .info-item:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+ 
+        .info-label { color: #64748b; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .info-value { color: #1e293b; font-size: 1.05rem; font-weight: 600; }
+ 
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
         }
-
+ 
         .contact-card {
             background: white;
             padding: 25px;
@@ -259,17 +395,16 @@
             color: inherit;
             border: 2px solid transparent;
         }
-
+ 
         .contact-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             border-color: var(--primary);
         }
-
+ 
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -277,247 +412,237 @@
             font-size: 1.8rem;
             margin: 0 auto 15px;
         }
-
-        .contact-card h4 {
-            color: #1e293b;
-            margin-bottom: 5px;
-        }
-
-        .contact-card p {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .skill-tag {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            color: var(--primary-dark);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--primary), #8b5cf6);
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding-left: 20px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--primary);
-        }
-
-        .timeline-date {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .timeline-title {
-            color: #1e293b;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .timeline-desc {
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
+ 
+        .contact-card h4 { color: #1e293b; margin-bottom: 5px; }
+        .contact-card p  { color: #64748b; font-size: 0.9rem; }
+ 
         footer {
             text-align: center;
             margin-top: 60px;
             padding: 30px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255,255,255,0.8);
             font-size: 0.9rem;
-            background: rgba(15, 23, 42, 0.5);
+            background: rgba(15,23,42,0.5);
             backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
-
+ 
         @media (max-width: 768px) {
-            .profile-card { padding: 30px 20px; }
+            .guide-card { padding: 30px 20px; }
+            .guide-name { font-size: 1.6rem; }
+            .students-grid { grid-template-columns: 1fr 1fr; }
             .content-card { padding: 25px; }
-            .profile-name { font-size: 1.8rem; }
+        }
+ 
+        @media (max-width: 500px) {
+            .students-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-animation">...</div>
-
-    <header>
-        <h1>🔍 Image Forgery Detection</h1>
-    </header>
-
-    <!-- NAVIGATION GOES HERE - note the class="active" changes -->
-    <nav>
-        <a href="{{ url_for('home') }}"> Detect</a>
-        <a href="{{ url_for('about_project') }}"> System</a>
-        <a href="{{ url_for('about_me') }}" class="active">👤 Contact</a>
-    </nav>
-
-    <div class="container">
-        <!-- about me content -->
+ 
+<div class="bg-animation">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+ 
+<header>
+    <h1>🔍 Image Forgery Detection</h1>
+</header>
+ 
+<nav>
+    <a href="{{ url_for('home') }}">🔍 Detect</a>
+    <a href="{{ url_for('about_project') }}">⚙️ System</a>
+    <a href="{{ url_for('about_me') }}" class="active">👥 Team</a>
+</nav>
+ 
+<div class="container">
+ 
+    <!-- ═══ GUIDE ═══ -->
+    <div class="section-heading">
+        <h2>👨‍🏫 Project Guide</h2>
+        <p>Supervised and mentored by</p>
     </div>
-
-    <div class="bg-animation">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
-
-
-    <div class="container">
-
-        <div class="profile-card">
-            <div class="profile-avatar">
-                <img src="{{ url_for('static', filename='images/profile.jpeg') }}" alt="">
-            </div>
-            <h1 class="profile-name">Mohith Choppara</h1>
-            <p class="profile-title">Computer Science Student & ML Enthusiast</p>
-            <p class="profile-bio">
-                Passionate about computer vision, digital forensics, and building intelligent systems that solve real-world problems. 
-                Specialized in deep learning architectures and explainable AI techniques for image analysis.
-            </p>
-        </div>
-
-        <div class="content-card">
-            <h2><span>🎓</span> Education</h2>
+ 
+    <div class="guide-card">
+        <div class="guide-badge">Author &amp; Guide</div>
+        <div class="guide-avatar">👨‍💼</div>
+        <h1 class="guide-name">Dr. Rajesh Kumar</h1>
+        <p class="guide-role">Associate Professor</p>
+        <p class="guide-dept">
+            Department of Computer Science &amp; Engineering<br>
+            Seshadri Rao Gudlavalleru Engineering College, JNTU Kakinada
+        </p>
+ 
+        <div class="guide-edu">
+            <h3>🎓 Education</h3>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2026</div>
-                    <div class="timeline-title">Bachelor of Technology in Internet of Things</div>
-                    <div class="timeline-desc">
-                        Seshadri Rao Gudlavalleru Engineering College, JNTU Kakinada<br>
-                        Specialization: Internet of Things
-                    </div>
+                    <div class="timeline-date">2005 – 2009</div>
+                    <div class="timeline-title">Ph.D. in Computer Science</div>
+                    <div class="timeline-desc">IIT Hyderabad &nbsp;·&nbsp; Specialization: Image Processing &amp; Computer Vision</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2026</div>
-                    <div class="timeline-title">Minor Degree in Computer Science and Engineering</div>
-                    <div class="timeline-desc">
-                        Seshadri Rao Gudlavalleru Engineering College<br>
+                    <div class="timeline-date">2002 – 2004</div>
+                    <div class="timeline-title">M.Tech in Computer Science</div>
+                    <div class="timeline-desc">JNTU Hyderabad</div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- ═══ STUDENTS ═══ -->
+    <div class="section-heading">
+        <h2>🎓 Student Team</h2>
+        <p>The brilliant minds behind this project</p>
+    </div>
+ 
+    <div class="students-grid">
+ 
+        <!-- Student 1 -->
+        <div class="student-card">
+            <div class="student-avatar">👨‍🎓</div>
+            <div class="student-name">Mohith Choppara</div>
+            <div class="student-roll">Roll No: 22BQ1A4175</div>
+            <div class="mini-divider"></div>
+            <div class="student-edu">
+                <h3>🎓 Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">B.Tech – Internet of Things</div>
+                        <div class="timeline-desc">SRGEC, JNTU Kakinada</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">Minor – CSE</div>
+                        <div class="timeline-desc">SRGEC</div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="content-card">
-            <h2><span>📞</span> Contact Information</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="info-label">Email</div>
-                    <div class="info-value">mohith4175@gmail.com</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Phone</div>
-                    <div class="info-value">+91 8919392250</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Location</div>
-                    <div class="info-value">Repalle, Andhra Pradesh, India</div>
+ 
+        <!-- Student 2 -->
+        <div class="student-card">
+            <div class="student-avatar">👨‍🎓</div>
+            <div class="student-name">Arjun Reddy</div>
+            <div class="student-roll">Roll No: 22BQ1A4132</div>
+            <div class="mini-divider"></div>
+            <div class="student-edu">
+                <h3>🎓 Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">B.Tech – Internet of Things</div>
+                        <div class="timeline-desc">SRGEC, JNTU Kakinada</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">Minor – CSE</div>
+                        <div class="timeline-desc">SRGEC</div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="content-card">
-            <h2><span>🔗</span> Connect With Me</h2>
-            <div class="contact-methods">
-                <a href="https://www.linkedin.com/in/mohith-choppara-53a063290/" target="_blank" class="contact-card">
-                    <div class="contact-icon">💼</div>
-                    <h4>LinkedIn</h4>
-                    <p>Professional Profile</p>
-                </a>
-                <a href="https://github.com/mohith-4175" target="_blank" class="contact-card">
-                    <div class="contact-icon">🐙</div>
-                    <h4>GitHub</h4>
-                    <p>Code Repository</p>
-                </a>
-                <a href="mailto:mohith4175@gmail.com" class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h4>Email</h4>
-                    <p>Direct Contact</p>
-                </a>
-
+ 
+        <!-- Student 3 -->
+        <div class="student-card">
+            <div class="student-avatar">👩‍🎓</div>
+            <div class="student-name">Priya Sharma</div>
+            <div class="student-roll">Roll No: 22BQ1A4158</div>
+            <div class="mini-divider"></div>
+            <div class="student-edu">
+                <h3>🎓 Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">B.Tech – Internet of Things</div>
+                        <div class="timeline-desc">SRGEC, JNTU Kakinada</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">Minor – CSE</div>
+                        <div class="timeline-desc">SRGEC</div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="content-card">
-            <h2><span>💻</span> Technical Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">TensorFlow</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">OpenCV</span>
-                <span class="skill-tag">Flask</span>
-                <span class="skill-tag">Deep Learning</span>
-                <span class="skill-tag">Computer Vision</span>
-                <span class="skill-tag">Digital Forensics</span>
-                <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">IoT</span>
+ 
+        <!-- Student 4 -->
+        <div class="student-card">
+            <div class="student-avatar">👨‍🎓</div>
+            <div class="student-name">Kiran Babu</div>
+            <div class="student-roll">Roll No: 22BQ1A4167</div>
+            <div class="mini-divider"></div>
+            <div class="student-edu">
+                <h3>🎓 Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">B.Tech – Internet of Things</div>
+                        <div class="timeline-desc">SRGEC, JNTU Kakinada</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – 2026</div>
+                        <div class="timeline-title">Minor – CSE</div>
+                        <div class="timeline-desc">SRGEC</div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        
-        <div class="content-card">
-            <h2><span>🎯</span> Interests & Hobbies</h2>
-            <p style="color: #475569; line-height: 1.8;">
-                Beyond coding, I'm passionate about photography, cybersecurity research, and participating in hackathons. 
-                I enjoy contributing to open-source projects and mentoring junior students in programming and ML concepts. 
-                Always eager to learn new technologies and explore the intersection of AI and digital security.
-            </p>
+ 
+    </div><!-- /students-grid -->
+ 
+    <!-- ═══ SHARED CONTACT INFO ═══ -->
+    <div class="content-card">
+        <h2><span>📞</span> Contact Information</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Email</div>
+                <div class="info-value">mohith4175@gmail.com</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Phone</div>
+                <div class="info-value">+91 8919392250</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Location</div>
+                <div class="info-value">Repalle, Andhra Pradesh, India</div>
+            </div>
         </div>
-
     </div>
-
-    <footer>
-        <p>© 2026 Hybrid Image Forgery Detection System</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">
-            <a href="index.html">Back to Home</a> • <a href="about-project.html">About Project</a>
-        </p>
-    </footer>
-
+ 
+    <!-- ═══ SHARED CONNECT ═══ -->
+    <div class="content-card">
+        <h2><span>🔗</span> Connect With Us</h2>
+        <div class="contact-methods">
+            <a href="https://www.linkedin.com/in/mohith-choppara-53a063290/" target="_blank" class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h4>LinkedIn</h4>
+                <p>Professional Profile</p>
+            </a>
+            <a href="https://github.com/mohith-4175" target="_blank" class="contact-card">
+                <div class="contact-icon">🐙</div>
+                <h4>GitHub</h4>
+                <p>Code Repository</p>
+            </a>
+            <a href="mailto:mohith4175@gmail.com" class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h4>Email</h4>
+                <p>Direct Contact</p>
+            </a>
+        </div>
+    </div>
+ 
+</div><!-- /container -->
+ 
+<footer>
+    <p>© 2026 Hybrid Image Forgery Detection System</p>
+    <p style="margin-top:10px; font-size:0.8rem;">
+        <a href="{{ url_for('home') }}" style="color:rgba(255,255,255,0.7);">Back to Home</a> •
+        <a href="{{ url_for('about_project') }}" style="color:rgba(255,255,255,0.7);">About Project</a>
+    </p>
+</footer>
+ 
 </body>
 </html>
