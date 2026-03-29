@@ -10,22 +10,20 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg:       #0d1117;
-            --bg2:      #111827;
-            --card:     #161d2e;
-            --border:   rgba(255,255,255,0.07);
-            --border2:  rgba(255,255,255,0.13);
-            --accent:   #6366f1;
+            --bg:       #0a0a0f;
+            --bg2:      #0f1117;
+            --card:     #13161f;
+            --border:   rgba(255,255,255,0.06);
+            --border2:  rgba(255,255,255,0.12);
+            --accent:   #7c3aed;
             --accent2:  #a855f7;
             --pink:     #ec4899;
             --blue:     #3b82f6;
             --cyan:     #06b6d4;
             --text:     #e2e8f0;
-            --text-dim: #64748b;
-            --text-mid: #94a3b8;
-
-            /* Student colours */
-            --s1: #6366f1;
+            --text-dim: #4b5563;
+            --text-mid: #9ca3af;
+            --s1: #7c3aed;
             --s2: #a855f7;
             --s3: #06b6d4;
             --s4: #ec4899;
@@ -42,44 +40,47 @@
         /* ── Navbar ── */
         .navbar {
             position: sticky; top: 0; z-index: 200;
-            background: rgba(13,17,23,0.9);
-            backdrop-filter: blur(20px);
+            background: rgba(10,10,15,0.85);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 0 40px; height: 64px;
+            padding: 0 48px; height: 60px;
             display: flex; align-items: center; justify-content: space-between;
         }
-
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo-icon {
-            width: 38px; height: 38px;
+            width: 34px; height: 34px;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
             border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center; font-size: 1rem;
         }
-        .logo-text { font-size: 1.1rem; font-weight: 700; }
-        .logo-text span:first-child { color: white; }
-        .logo-text span:last-child {
-            background: linear-gradient(135deg, var(--accent), var(--pink));
+        .logo-text { font-size: 1rem; font-weight: 800; }
+        .logo-text .w { color: white; }
+        .logo-text .g {
+            background: linear-gradient(135deg, var(--accent2), var(--pink));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
-        .nav-links { display: flex; align-items: center; gap: 8px; }
-        .nav-links a {
-            color: var(--text-mid); text-decoration: none;
-            font-size: 0.92rem; font-weight: 500;
-            padding: 8px 14px; border-radius: 8px;
-            transition: all 0.2s;
+        .nav-right { display: flex; align-items: center; gap: 6px; }
+        .nav-btn {
             display: flex; align-items: center; gap: 6px;
+            padding: 7px 14px; border-radius: 8px;
+            font-size: 0.875rem; font-weight: 500;
+            text-decoration: none; transition: all 0.2s;
+            color: var(--text-mid); border: 1px solid transparent;
         }
-        .nav-links a:hover, .nav-links a.active { color: white; background: rgba(255,255,255,0.07); }
-        .theme-btn {
-            width: 34px; height: 34px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid var(--border2); border-radius: 8px;
+        .nav-btn:hover { color: white; background: rgba(255,255,255,0.07); }
+        .nav-btn.active { background: rgba(124,58,237,0.2); border-color: rgba(124,58,237,0.4); color: white; }
+        .nav-icon {
+            width: 18px; height: 18px; background: rgba(124,58,237,0.3);
+            border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;
+        }
+        .nav-btn.active .nav-icon { background: rgba(124,58,237,0.5); }
+        .theme-toggle {
+            width: 32px; height: 32px; background: #f59e0b;
+            border-radius: 50%; border: none; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 1rem; color: var(--text-mid); transition: all 0.2s;
+            font-size: 0.9rem; margin-left: 4px; transition: transform 0.2s;
         }
+        .theme-toggle:hover { transform: scale(1.1); }
         .theme-btn:hover { background: rgba(255,255,255,0.12); color: white; }
 
         /* ── Page hero ── */
@@ -455,13 +456,13 @@
 <nav class="navbar">
     <a href="{{ url_for('home') }}" class="logo">
         <div class="logo-icon">🔍</div>
-        <div class="logo-text"><span>FORGERY</span><span>DETECTOR</span></div>
+        <div class="logo-text"><span class="w">FORGERY</span><span class="g">DETECTOR</span></div>
     </a>
-    <div class="nav-links">
-        <a href="{{ url_for('home') }}">🏠 Home</a>
-        <a href="{{ url_for('about_project') }}">ℹ️ About</a>
-        <a href="{{ url_for('about_me') }}" class="active">👤 Team</a>
-        <div class="theme-btn">☀️</div>
+    <div class="nav-right">
+        <a href="{{ url_for('home') }}" class="nav-btn"><div class="nav-icon">🏠</div> Home</a>
+        <a href="{{ url_for('about_project') }}" class="nav-btn"><div class="nav-icon">ℹ️</div> About</a>
+        <a href="{{ url_for('about_me') }}" class="nav-btn active"><div class="nav-icon">👤</div> Team</a>
+        <button class="theme-toggle">☀️</button>
     </div>
 </nav>
 
@@ -487,7 +488,7 @@
             <div class="guide-badge-pill">Author &amp; Guide</div>
         </div>
         <div class="guide-info">
-            <h2>Mr.Anil Kumar</h2>
+            <h2>Mr.K.Anil kumar</h2>
             <div class="guide-role">Assistant Professor</div>
             <div class="guide-dept">Department of Internet of Things<br>Seshadri Rao Gudlavalleru Engineering College, JNTU Kakinada</div>
         </div>
@@ -584,7 +585,7 @@
         <div class="info-grid">
             <div class="info-item">
                 <div class="info-label">Email</div>
-                <div class="info-value">mohith4175@gmail.com</div>
+                <div class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="335e5c5b5a475b0702040673545e525a5f1d505c5e">[email&#160;protected]</a></div>
             </div>
             <div class="info-item">
                 <div class="info-label">Phone</div>
@@ -614,7 +615,7 @@
                 <h4>GitHub</h4>
                 <p>Code Repository</p>
             </a>
-            <a href="mailto:mohith4175@gmail.com" class="connect-card">
+            <a href="/cdn-cgi/l/email-protection#731e1c1b1a071b4742444633141e121a1f5d101c1e" class="connect-card">
                 <div class="connect-icon">📧</div>
                 <h4>Email</h4>
                 <p>Direct Contact</p>
@@ -633,10 +634,4 @@
     <div class="footer-links">
         <a href="{{ url_for('home') }}">Home</a>
         <a href="{{ url_for('about_project') }}">About</a>
-        <a href="{{ url_for('about_me') }}">Team</a>
-    </div>
-    <div class="footer-copy">© 2026 Image Forgery Detection. All rights reserved.</div>
-</footer>
-
-</body>
-</html>
+        <a hre
